@@ -83,6 +83,16 @@ namespace ConsoleApp2
     {
         public static Fraction Add(Fraction left, Fraction right)
         {
+            if (left == null)
+            {
+                throw new ArgumentException("argument is null", nameof(left));
+            }
+
+            if (right == null)
+            {
+                throw new ArgumentException("argument is null", nameof(right));
+            }
+
             var newDenominator = left.Denominator;
             var rightMultiplier = 1;
             var leftMultiplier = 1;
@@ -99,6 +109,16 @@ namespace ConsoleApp2
 
         public static Fraction Substract(Fraction left, Fraction right)
         {
+            if (left == null)
+            {
+                throw new ArgumentException("argument is null", nameof(left));
+            }
+
+            if (right == null)
+            {
+                throw new ArgumentException("argument is null", nameof(right));
+            }
+
             var newDenominator = left.Denominator;
             var rightMultiplier = 1;
             var leftMultiplier = 1;
@@ -115,11 +135,31 @@ namespace ConsoleApp2
 
         public static Fraction Multiply(Fraction left, Fraction right)
         {
+            if (left == null)
+            {
+                throw new ArgumentException("argument is null", nameof(left));
+            }
+
+            if (right == null)
+            {
+                throw new ArgumentException("argument is null", nameof(right));
+            }
+
             return new Fraction(left.Numerator * right.Numerator, left.Denominator * right.Denominator);
         }
 
         public static Fraction Devide(Fraction left, Fraction right)
         {
+            if (left == null)
+            {
+                throw new ArgumentException("argument is null", nameof(left));
+            }
+
+            if (right == null)
+            {
+                throw new ArgumentException("argument is null", nameof(right));
+            }
+
             if (right.Numerator == 0)
             {
                 throw new DivideByZeroException("Cant devide by zero");
